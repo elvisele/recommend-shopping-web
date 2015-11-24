@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>eddey-Books</title>
+<!--CSS-->
+<link rel="stylesheet" href="/static/css/styles.css" />
+<!--Google Webfont -->
+<link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css' />
+<!--Javascript-->
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="/static/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/js/jquery.jcarousel.js"></script>
+<script type="text/javascript" src="/static/js/form_elements.js"></script>
+<script type="text/javascript" src="/static/js/custom.js"></script>
+<!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+<![endif]-->
+<!-- mobile setting -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<div class="wrapper">
+    <div class="header_container">
+        <!--Header Starts-->
+        <header>
+            <div class="top_bar clear">
+                <!--Language Switcher Starts-->
+                <div class="language_switch"> <a class="active" href="#" title="ENGLISH">EN</a> <a href="#" title="FRENCH">FR</a> </div>
+                <!--Language Switcher Ends-->
+                <!--Top Links Starts-->
+                 {% if userid %}
+                    <ul class="top_links">
+                        <li><a href="#">用户:{{ userid }}</a></li>
+                        <li><a href="/books/shoppingcart/">购物车</a></li>
+                        <li><a href="/books/shoppingbuy/">购买清单</a></li>
+                        <li><a href="/books/logout/">注销</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="top_links">>
+                        <li><a href="/books/login/">登录</a></li>
+                        <li class="highlight"><a href="/books/register/">注册</a></li>
+                    </ul>
+                {% endif %}
+                <!--Top Links Ends-->
+            </div>
+            <!--Logo Starts-->
+            <h1 class="logo"><img src="/static/images/logo.png" /></h1>
+            <!--Logo Ends-->
+           
+        </header>
+        <!--Header Ends-->
+    </div>
+    <div class="navigation_container">
+        <!--Navigation Starts-->
+        <nav>
+            <ul class="primary_nav">
+                <li class="active"><a href="#">图书分类</a>
+                    <!--SUbmenu Starts-->
+                    <ul class="sub_menu">
+                        <li> <a href="#">New</a>
+                            <ul>
+                                <li><a href="/books/listing">文学馆</a></li>
+                                <li><a href="/books/listing">少儿</a></li>
+                                <li><a href="/books/listing">教育</a></li>
+                                <li><a href="/books/listing">经营</a></li>
+                                <li><a href="/books/listing">励志与成功</a></li>
+                                <li><a href="/books/listing">人文社科</a></li>
+                                <li><a href="/books/listing">生活</a></li>
+                                <li><a href="/books/listing">艺术</a></li>
+                                <li><a href="/books/listing">科技</a></li>
+                                <li><a href="/books/listing">计算机与互联网</a></li>
+                                <li><a href="/books/listing">英文进口图书</a></li>
+                                <li<a href="/books/listing">>电子书</a></li>
+                                <li><a href="/books/listing">杂志与期刊</a></li>
+                                <li><a href="/books/listing">音像</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="#">Hot</a>
+                            <ul>
+                                <li><a href="/books/listing">小说  &nbsp;&nbsp;</a><a href="/books/listing">文学  &nbsp;&nbsp;</a><a href="/books/listing">青春  &nbsp;&nbsp;</a><a href="/books/listing">传记  &nbsp;&nbsp;</a><a href="/books/listing">动漫</a></li>
+                                <li><a href="/books/listing">0-2   &nbsp;&nbsp;</a><a href="/books/listing">3-6   &nbsp;&nbsp;</a><a href="/books/listing">7-10   &nbsp;&nbsp;</a><a href="/books/listing">11-14  &nbsp;&nbsp;</a><a href="/books/listing">儿童文学  &nbsp;&nbsp;</a><a href="/books/listing">科普</a></li>
+                                <li><a href="/books/listing">中小学教辅  &nbsp;&nbsp;</a><a href="/books/listing">教材  &nbsp;&nbsp;</a><a href="/books/listing">外语 &nbsp;&nbsp;</a><a href="/books/listing">考试 &nbsp;&nbsp; </a><a href="/books/listing">四级</a></li>
+                                <li><a href="/books/listing">管理&nbsp;&nbsp; </a><a href="/books/listing"> 经济 &nbsp;&nbsp; </a><a href="/books/listing">投资 &nbsp;&nbsp;</a><a href="/books/listing"> 股票</a></li>
+                                <li><a href="/books/listing">人在职场&nbsp;&nbsp;  </a><a href="/books/listing">女性励志 &nbsp;&nbsp;</a><a href="/books/listing">成功学 </a></li>
+                                <li><a href="/books/listing">历史 &nbsp;&nbsp; </a><a href="/books/listing">哲学宗教 &nbsp;&nbsp; </a><a href="/books/listing">政治军事&nbsp;&nbsp; </a> <a href="/books/listing">国学古籍</a></li>
+                                <li><a href="/books/listing">家教 &nbsp;&nbsp;</a> <a href="/books/listing">育儿&nbsp;&nbsp;  </a><a href="/books/listing">孕产&nbsp;&nbsp;</a> <a href="/books/listing"> 健身保健 &nbsp;&nbsp;</a><a href="/books/listing"> 旅游地图</a></li>
+                                <li><a href="/books/listing">摄影&nbsp;&nbsp;</a> <a href="/books/listing">设计&nbsp;&nbsp; </a> <a href="/books/listing">绘画 &nbsp;&nbsp;</a> <a href="/books/listing">连环画</a></li>
+                                <li><a href="/books/listing">科普读物 &nbsp;&nbsp; </a><a href="/books/listing">工业技术 &nbsp;&nbsp; </a><a href="/books/listing">建筑设计&nbsp;&nbsp; </a> <a href="/books/listing">医学</a></li>
+                                <li><a href="/books/listing">编程语言  &nbsp;&nbsp;</a><a href="/books/listing">办公软件&nbsp;&nbsp; </a> <a href="/books/listing">图形图像&nbsp;&nbsp;</a> <a href="/books/listing">数据库</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--SUbmenu Ends-->
+                </li>
+                <li><a href="/books/"><strong>图书首页</strong></a></li>
+                <li><a href="/books/listing"><strong>全部图书</strong></a></li>
+                <li><a href="/books/listing"><strong>新品预售</strong></a></li>
+                <li><a href="/books/listing"><strong>特色图书</strong></a></li>
+            </ul>
+      
+    </nav>
+    <!--Navigation Ends--> 
+  </div>
+  <div class="section_container"> 
+    <!--Mid Section Starts-->
+    <section>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Women</a></li>
+      <li class="active"><a href="#">Shirts & Blouses</a></li>
+    </ul>
+    <!--PRODUCT DETAIL STARTS-->
+    <div id="product_detail"> 
+      <!--Product Left Starts-->
+      <div class="product_leftcol"> <img src="/static/big1.jpg" /> <span class="pr_info">Quick Overview</span>
+        <ul class="pr_gallery">
+          <li><a href="#"><img src="/static/m1.jpg" /></a></li>
+          <li><a href="#"><img src="/static/m2.jpg" /></a></li>
+          <li><a href="#"><img src="/static/m3.jpg" /></a></li>
+        </ul>
+      </div>
+      <!--Product Left Ends--> 
+      <!--Product Right Starts-->
+      <div class="product_rightcol"> <small class="pr_type">欢 迎 光 临</small>
+        <h1>{{ bookinfo.book_title }}</h1>
+        <p class="short_dc" /> 入选新京报年中榜！当下中国谁都不容错过的著作，迄今为止重要的一本商业书！马克·扎克伯格、埃隆·马斯克、马克·安德森、纳西姆·塔勒布、周鸿祎、雷军、徐小平、刘强东、徐新、唐彬、吴伯凡、牛文文等大咖鼎力推荐的创新、创业、创投哲学！上市2个月突破50万册！
+        
+        <div class="pr_price"> <big>$49.90</big> <small>$72.00</small> </div>
+        <div class="size_info">
+          <div class="size_sel">
+            <label>配送至 :</label>
+            <select>
+              <option />北京
+              <option />韶关
+            </select>
+          </div>
+          <div class="color_sel">
+            <label>套餐</label>
+            <select>
+              <option />套餐一
+              <option />套餐二
+            </select>
+          </div>
+        </div>
+        <div class="qty_info">
+          <div class="quantity">
+            <label>分期付款</label>
+            <select>
+              <option />$20&times;4期
+              <option />$40&times;2期
+            </select>
+          </div>
+        </div>
+        <div class="add_to_buttons">
+          <a href="/books/buy/{{ bookinfo.isbn }}"><button  class="add_cart">Buy now</button></a>
+          <span>or</span>
+          <ul>
+            <li><a href="/books/cart/{{ bookinfo.isbn }}">加入购物车</a></li>
+          </ul>
+        </div>
+        <div class="product_overview">
+          <h4>商品介绍</h4>
+          <ul>
+            <p>书    名 ：{{ bookinfo.book_title }} 
+            <p>作    者 ：{{ bookinfo.book_author }}
+            <p>出版时间 ：{{ bookinfo.yesr_publication }}
+            <p>出 版 社 ：{{ bookinfo.publisher }}
+          </ul>
+        </div>
+         <div class="product_overview">
+          <h4>内容简介</h4>
+          <ul>
+            <p>《我的盖世英熊》内容简介：
+                这是一部北漂青年追求女神的爆笑血泪史。
+                当迷惘的酒店门童“宅瘫男”——张光正，爱上嘴毒心软的 “栗子女”——郑友恩，他真的能飞黄腾达，迎娶白富美，走上人生巅峰吗？
+                为了制造相遇的机会，张光正每日陪有恩的妈妈在小区的花园里跳广场舞，成为了大妈们的贴心小棉袄，终于换来和梦中情人的相处机会！可是郑友恩是个语言刻薄，攻击性极强的姑娘，第一次约会，就骗得张光正只剩一条内裤被关在商场的厕所里。
+                在广场舞大妈们的鼓励下，张光正发挥了自己“脾气好得都不要脸了”的特长，利用手里的一切资源坚持不懈地为有恩制造小惊喜。期间还帮助大妈们参加广场舞比赛，弥补了她们年轻时的遗憾。这样热情而善良的品格是否能将有恩打动？面对家庭背景和收入上的悬殊差距，两个人究竟能否展开一段健康而美好的爱情？</p>
+          </ul>
+        </div>
+        <div class="product_overview">
+          <h4>作者介绍</h4>
+            <p>鲍鲸鲸，毕业于北京电影学院文学系。著有长篇小说《失恋33天》《等风来》，2012成为了年轻的金马编剧。其语言风格辛辣尖酸，洗练，干净，有点调侃和自嘲，故事情节男女皆宜，深受广大年轻人喜欢。</p>
+          </ul>
+        </div>
+        <div class="product_overview">
+          <h4>目录</h4>
+            <p> 1 ．『你现在不光宅，还瘫了。你这是宅瘫啊！宅瘫男！』 / 001
+            <p> 2 ．我从小生活的那片土地，是一片女人穿大貂、男人玩砍刀的土地。 / 021
+            <p> 3 ．每一位广场舞大妈，都有可能是你未来的丈母娘啊。 / 035
+            <p> 4 ．每一天的广场舞操练，都变得血雨腥风起来。 / 049
+            <p> 5 ．我正式从一个胯下长着安全气囊的　货，升级成了骗子。 / 059
+            <p> 6 ．『我脾气挺好的。……好得都有点儿不太要脸了。』 / 071
+            <p> 7 ．话都没说两句，就被冷冷的女神逼着，把自己扒了个精光。 / 083
+            <p> 8 ．我沉默了，怪不得每次见到郑有恩，都会觉得四周杀气缭绕的。 / 103
+            <p> 9 ．我会花好长时间盯着照片里有恩的心脏，因为那是整个银河系我最想去的地方。 / 113
+            <p> 10 ．谁都没有想到广场舞的战场会这么残酷。 / 133
+            <p> 11 ．那时的我并不知道，前面等着我的，是什么样的腥风血雨。 / 147
+            <p> 12 ．『你知道我爸是怎么没的吗？』 / 159
+            <p> 13 ．『你别靠我这么近，别人该以为我认识你了。』 / 175
+          </ul>
+        </div>
+        <div class="product_overview">
+        <h4>精彩书摘</h4>
+        <p>说到郑有恩，我俩的感情还在稳步发展中，并且有了一种非常健康的相处模式，就是她作威作福，我任劳任怨，偶尔我忍不住了反抗一下，当时确实能吓唬住她，但等她回过神儿来，我还是会被反攻爆头。
+        但有恩的懂事儿，是润物细无声的。每次她飞回来，我们俩约着吃饭，她总把我往各种街边小饭馆里带，往最贵里点，都超不过人均三十。两元钱一串的铁板鱿鱼，大棚里的麻辣烫，路边的饺子摊上坐满了拉活儿的出租车司机，煮饺子的大锅正对着公共厕所，她也照样吃。
+        我都有点儿看不下去了，“有恩，咱吃点儿好的吧？你别考虑我，我吃得起。”
+        “谁考虑你啦！”有恩坐在麻辣烫的大棚子里，一边涮菜，一边瞪我，“我就爱吃这口儿。”
+        “那咱去干净点儿的地方吃？”
+        “闭嘴吃你的，这儿哪不干净了？”有恩拿麻辣烫的签子戳我，“你以为贵就干净啊？吃饭的地儿干净得跟病房似的，后厨你看不见的地儿，跟动物园一样，什么都有。”
+        有恩抬头看向煮麻辣烫的大婶，“麻烦您，再来一份儿宽粉。”
+        “好嘞。”大婶转身从身后的塑料桶里捞出宽粉，动作麻利地甩一甩水，扔进锅里，“吃软点儿的，还是硬点儿的？”
+        “煮软点儿。”有恩冲我扬了扬下巴，“看见没有，开放式厨房，这才叫干净。”</p>
+      </div>
+    <!--Product Right Ends--> 
+  </div>
+  <!--PRODUCT DETAIL ENDS--> 
+  <!--Product List Starts-->
+  
+  <div class="products_list products_slider" >
+    <h2 class="sub_title">你 可 能 还 喜 欢</h2>
+    <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango" >
+      {% for recommendbook,reason in recommenddict.items %}
+              <li>
+                  <div class="product_image"><a href="/books/detail/{{ recommendbook.isbn }}">
+                    <img src="/static/b4.jpg" /></a>
+                  </div>
+                  <div class="product_info" style="height:60px">
+                      <h3><a href="/books/detail/{{ recommendbook.isbn }}"><li>{{ recommendbook.book_title }} </li></a></h3> </div>
+                    {% if reason  %}   
+                      <small>根据 population 推荐</small> 
+                    {% else %}
+                        <small>根据 {{ bookinfo.book_title }} 推荐</small>
+                    {% endif %}
+                      <div class="price_info"> <a href="#">+ Buy</a>
+                          <button class="price_add" title="" type="button"><span class="pr_price">$76.00</span><span class="pr_add">Buy</span></button>
+                      </div>
+              </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!--Product List Ends--> 
+  
+  <!--Newsletter_subscribe Starts-->
+  
+  <!--Newsletter_subscribe Ends-->
+  
+  </section>
+  <!--Mid Section Ends--> 
+</div>
+
+</div>
+<!--CUSTOMIZE-->
+<style type="text/css">
+.page_selector{ position:absolute; right:0px; top:28%;}
+.page_selector a.page_open{ display:inline-block; width:60px; height:12px; background:#252525; color:#fff; text-align:center; font-size:14px; padding:20px 0px; font-weight:bold; text-decoration:none; float:left;}
+.page_selector ul{ float:left; background:#f0f0f0; padding:10px 0px; border-top:solid 2px #000; border-bottom:solid 2px #000; display:none;}
+.page_selector ul li{ padding:8px 10px; }
+.page_selector ul li a{ font-weight:bold; text-decoration:none; color:#000; display:block; padding:2px 5px; text-transform:uppercase; font-size:11px;}
+
+.store_selector{ position:absolute; left:0px; top:28%;}
+.store_selector .store_open{display:inline-block; width:128px; height:55px;}
+.store_selector div{ float:left; width:157px; height:226px; display:none;}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//SLIDE TOGGLE
+	jQuery(".page_open").toggle(function() {
+		 $('.page_selector ul').slideDown(300);	
+		 }, function(){
+		 $('.page_selector ul').slideUp(300);		 
+	});	
+	//SLIDE TOGGLE
+	jQuery(".store_open").toggle(function() {
+		 $('.store_selector div').slideDown(300);	
+		 }, function(){
+		 $('.store_selector div').slideUp(300);		 
+	});
+
+});
+
+
+ $.each($('li .price_info .pr_price'), function (index,info) {
+   info.innerText = '$' + (Math.floor(Math.random() * 180) + 20);
+ });
+
+ $.each($('.product_image a img'), function (index,img) {
+  
+    img.src = '/static/b' + (Math.floor(Math.random() * 27) + 1) + '.jpg';
+    img.style.height = '200px';
+ })
+
+</script>
+
+
+
+<div class="page_selector">
+<a href="#" class="page_open">PAGES</a>
+<ul>
+  <li> <a href="/books/">首页</a></li>
+    <li> <a href="/books/listing">全部图书</a></li>
+    <li> <a href="/books/listing">新品预售</a></li>
+    <li> <a href="/books/listing">特色图书</a></li>
+</ul>
+</div>
+<!--CUSTOMIZE-->
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

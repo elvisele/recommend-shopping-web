@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<title>Login Two</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/bootstrap-social.css" rel="stylesheet" type="text/css">	
+	<link href="/static/css/templatemo_style.css" rel="stylesheet" type="text/css">	
+</head>
+<body class="templatemo-bg-image-1">
+	<div class="container">
+		<div class="col-md-12">
+    	{% if registered %}
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Eddey-Books says: <strong>thank you for registering!</strong></h1>
+					<a href="/books/">Return to the homepage.</a><br />
+				</div>
+			</div>
+		{% else %}
+			<div class="row">
+				<div class="col-md-12">
+					<h1>register here</h1>
+				</div>
+			</div>
+			<form class="form-horizontal templatemo-login-form-2" role="form" action="/books/register/" method="post" id="Person_form" style="width:250px">
+			{% csrf_token %}
+				<div class="row">
+					<div class="templatemo-one-signin col-md-12">
+					   <div class="form-group">
+				          <div class="col-md-12">
+				            <label for="username" class="control-label">userid</label>
+				            <div class="templatemo-input-icon-container" >
+				            	<div style="width:26px"><i class="fa fa-user"></i></div>
+				            	{{ person_form.userid }}
+				            </div>         		            		            
+				          </div>              
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <label for="username" class="control-label">location</label>
+				            <div class="templatemo-input-icon-container">
+				            	<i class="fa fa-user"></i>
+				            	{{ person_form.location }}
+				            </div>         		            		            
+				          </div>              
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <label for="username" class="control-label">age</label>
+				            <div class="templatemo-input-icon-container">
+				            	<i class="fa fa-user"></i>
+				            	{{ person_form.age }}
+				            </div>         		            		            
+				          </div>              
+				        </div>
+				        <div class="form-group">
+				          <div class="col-md-12">
+				            <input type="submit" name="submit" value="Register" class="btn btn-warning"/>	
+				          </div>
+				        </div>
+					</div>	
+				</div>
+			</form> 
+		{% endif %} 		      
+		</div>
+	</div> 
+</body>
+</html>
